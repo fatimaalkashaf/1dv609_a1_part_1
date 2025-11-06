@@ -14,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * - Password: Correct implementation
  * - BugDoesNotTrim: Does not trim whitespace
  * - BugToShortPassword: Allows passwords shorter than 12 characters
+ * - BugVeryShort: Allows way to short passwords
  * - BugWrongExceptionMessage: Wrong exception message for short passwords
  * - BugMissingPasswordLengthCheck: Does not throw exception for short passwords
  * - BugMissingNumberCheck: Does not throw exception if password lacks a number
@@ -27,6 +28,7 @@ public class PasswordTest {
         // return (IPassword) new BugDoesNotTrim(s);
         // return (IPassword) new BugToShortPassword(s);
         // return (IPassword) new BugToShortPassword(s);
+        // return (IPassword) new BugVeryShort(s);
         // return (IPassword) new BugWrongExceptionMessage(s);
         // return (IPassword) new BugMissingPasswordLengthCheck(s);
         // return (IPassword) new BugMissingNumberCheck(s);
