@@ -26,13 +26,13 @@ class SwedishSocialSecurityNumber {
         if (helper.isValidDay(this.getDay()) === false) {
             throw new Error("Invalid month in SSN");
         }
-        /*if (helper.luhnisCorrect(this.#ssn) === false) {
+        if (helper.luhnisCorrect(this.#ssn) === false) {
             throw new Error("Invalid SSN according to Luhn's algorithm");
-        }*/
+        }
     }
 
     getYear() {
-        return this.#ssn.substring(0, 2); //YYMMDD-XXXX
+        return this.#ssn.substring(1, 3); //YYMMDD-XXXX <-BUG
     }
 
     getMonth() {
@@ -48,4 +48,4 @@ class SwedishSocialSecurityNumber {
     }
 }
 
-export { SwedishSocialSecurityNumber }
+module.exports = SwedishSocialSecurityNumber;

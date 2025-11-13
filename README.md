@@ -18,6 +18,7 @@ https://github.com/dntoll/1dv609_a1_part_1
  * Clone the forked repo to your own computer. 
  * You can make the fork private if you want. 
  * Follow the instructions in the two Markdown files in the root directory.
+   * Practice_ write_run_tests.md and Practice_write_mocked_tests.md
  * Select Java or js versions and check their instructions.
  * Ask questions in Slack!
 
@@ -32,7 +33,7 @@ Examinations are booked in a spreadsheet given in a pinned Slack-post.
 If time runs out before a passing grade can be set, a Fail is recorded.
 
 * Disable AI in your editor
-* Be prepared to show the results of the practice tasks.
+* Be prepared to show the results of the two practice tasks.
 * Be prepared to run the tests, to measure coverage, and use mocking.
 * Be prepared to edit your code.
 * Be prepared to answer questions about any part of your code.

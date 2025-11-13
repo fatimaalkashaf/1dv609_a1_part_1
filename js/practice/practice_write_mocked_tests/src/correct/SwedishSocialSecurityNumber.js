@@ -11,7 +11,7 @@ class SwedishSocialSecurityNumber {
 
         const trimmedSS = stringInput.trim(); 
 
-        if (helper.isCorrectLength(trimmedSS)) {
+        if (helper.isNotCorrectLength(trimmedSS)) {
             throw new Error("To short, must be 11 characters");
         }
         if (helper.isCorrectFormat(trimmedSS) === false) {
@@ -40,7 +40,7 @@ class SwedishSocialSecurityNumber {
     }
 
     getDay() {
-        return this.#ssn.substring(4, 6); //YYMMDD-XXXX  
+        return this.#ssn.substring(4, 6); //YYMMDD-XXXX  0123456-8901
     }
 
     getSerialNumber() {
