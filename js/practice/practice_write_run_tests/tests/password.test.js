@@ -9,9 +9,10 @@
 // import { Password } from '../src/BugNeverContainsNumbers'
 // import { Password } from '../src/BugToShortPassword'
 // import { Password } from '../src/BugVeryShort'
-// { Password } from '../src/BugWrongHashingAlgorithm'
+// import { Password } from '../src/BugWrongHashingAlgorithm'
 // import { Password } from '../src/BugWrongMessage'
-import { Password } from '../src/Correct'
+import { Password } from '../src/MyCustomBug'
+// import { Password } from '../src/Correct'
 
 describe('Password class, test suite', () => {
     //put constants here to increase readability
