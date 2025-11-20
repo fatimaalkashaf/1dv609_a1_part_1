@@ -21,6 +21,7 @@ describe('Password class, test suite', () => {
     const passwordWithSpaces = '  abcdefghijk1  '
     const passwordA = 'abcdefghijk1'
     const passwordB = 'lmnopqrstuv2'
+    const passwordWithoutNumbers = 'abcdefghijkl'
     
     test('constructor should throw Too short password Error for a 11 characters password', () => {
        expect(() => new Password(passwordWith11Characters)).toThrow('Too short password')
@@ -58,5 +59,10 @@ describe('Password class, test suite', () => {
 
         // Assert
         expect(result).toBe(false)
+    })
+
+    test('constructor should throw No number found error for password without number', () => {
+        // Act & Assert
+        expect(() => new Password(passwordWithoutNumbers)).toThrow('No number found')
     })
 })
