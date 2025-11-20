@@ -16,9 +16,19 @@ import { Password } from '../src/Correct'
 describe('Password class, test suite', () => {
     //put constants here to increase readability
     const passwordWith11Characters = 'abcdefghij1'
-
+    const passwordWith12Characters = 'abcdefghijk1'
+    const expectedHashFor12Characters = 8061291001640368000
+    
     test('constructor should throw Too short password Error for a 11 characters password', () => {
-
        expect(() => new Password(passwordWith11Characters)).toThrow('Too short password')
+    })
+
+    test('getPasswordHash should return correct Hash for 12 characters password', () => {
+        // Act
+        const password = new Password(passwordWith12Characters)
+        const actualHash = password.getPasswordHash()
+
+        // Assert
+        expect(actualHash).toBe(expectedHashFor12Characters)
     })
 })
