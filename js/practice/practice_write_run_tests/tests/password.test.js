@@ -11,7 +11,7 @@
 // import { Password } from '../src/BugVeryShort'
 // { Password } from '../src/BugWrongHashingAlgorithm'
 // import { Password } from '../src/BugWrongMessage'
-// import { Password } from '../src/Correct'
+import { Password } from '../src/Correct'
 
 describe('Password class, test suite', () => {
     //put constants here to increase readability
@@ -64,5 +64,14 @@ describe('Password class, test suite', () => {
     test('constructor should throw No number found error for password without number', () => {
         // Act & Assert
         expect(() => new Password(passwordWithoutNumbers)).toThrow('No number found')
+    })
+
+    test ('isPasswordSame should throw Invalid argument Error for non password argument', () => {
+        // Arrange
+        const password = new Password(passwordWith12Characters)
+        const notAPassword = 'just a string'
+
+        // Act and Assert
+        expect(() => password.isPasswordSame(notAPassword)).toThrow('Invalid argument')
     })
 })
