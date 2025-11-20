@@ -11,7 +11,7 @@
 // import { Password } from '../src/BugVeryShort'
 // import { Password } from '../src/BugWrongHashingAlgorithm'
 // import { Password } from '../src/BugWrongMessage'
-// import { Password } from '../src/Correct'
+import { Password } from '../src/Correct'
 
 describe('Password class, test suite', () => {
     //put constants here to increase readability
@@ -19,6 +19,8 @@ describe('Password class, test suite', () => {
     const passwordWith12Characters = 'abcdefghijk1'
     const expectedHashFor12Characters = 8061291001640368000
     const passwordWithSpaces = '  abcdefghijk1  '
+    const passwordA = 'abcdefghijk1'
+    const passwordB = 'lmnopqrstuv2'
     
     test('constructor should throw Too short password Error for a 11 characters password', () => {
        expect(() => new Password(passwordWith11Characters)).toThrow('Too short password')
@@ -44,5 +46,17 @@ describe('Password class, test suite', () => {
 
         // Assert
         expect(actualHash).toBe(expectedHash)
+    })
+
+    test('isPasswordSame should return false for different passwords', () => {
+        // Arrange
+        const password1 = new Password(passwordA)
+        const password2 = new Password(passwordB)
+
+        // Act
+        const result = password1.isPasswordSame(password2)
+
+        // Assert
+        expect(result).toBe(false)
     })
 })
