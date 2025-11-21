@@ -62,12 +62,12 @@ describe('Password class, test suite', () => {
         expect(result).toBe(false)
     })
 
-    test('constructor should throw No number found error for password without number', () => {
+    test('constructor should throw No number found error for password without a number', () => {
         // Act & Assert
         expect(() => new Password(passwordWithoutNumbers)).toThrow('No number found')
     })
 
-    test ('isPasswordSame should throw Invalid argument Error for non password argument', () => {
+    test ('isPasswordSame should throw Invalid argument error for a non password argument', () => {
         // Arrange
         const password = new Password(passwordWith12Characters)
         const notAPassword = 'just a string'
