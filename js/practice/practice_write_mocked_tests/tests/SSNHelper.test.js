@@ -1,9 +1,13 @@
 // import { SSNHelper } from '../src/correct/SSNHelper';
-import {SSNHelper} from '../src/bugs/BuggySSNHelperWrongLength'
+// import {SSNHelper} from '../src/bugs/BuggySSNHelperWrongLength'
+// import {SSNHelper} from '../src/bugs/BuggySSNHelperIncorrectFormat'
+import { SSNHelper } from "../src/bugs/BuggySSNHelperAllowMonth0";
 
 describe('SSNHelper Tests', () => {
     const validLengthSSN = '031006-1234'
     const tooLongSSN = '031006-12345'
+    const invalidFormatSSN = '0310061234'
+    const monthZero = '00'
 
     test('isCorrectLength should return true for a 11 character string', () => {
         // Arrange
@@ -26,4 +30,26 @@ describe('SSNHelper Tests', () => {
         // Assert
         expect(result).toBe(false);
     });
+
+    test('isCorrectFormat should return false for a string without dash', () => {
+        // Arrange
+        const helper = new SSNHelper()
+
+        // Act
+        const result = helper.isCorrectFormat(invalidFormatSSN)
+
+        // Assert
+        expect(result).toBe(false)
+    })
+
+    test('isValidMonth should return false for month zero', () => {
+        // Arrange
+        const helper = new SSNHelper()
+
+        // Act
+        const result = helper.isValidMonth(monthZero)
+
+        // Assert
+        expect(result).toBe(false)
+    })
 });
