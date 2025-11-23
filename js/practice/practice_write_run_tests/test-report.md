@@ -2,9 +2,9 @@
 
 ### Test Suite Summary
 - Total tests: 6
-- Coverage achieved: 100%
+- Coverage achieved: 100% line coverage
 
-![Test-table](test-table.png)
+![Test-table](password-table.png)
 
 ### Test Descriptions
 1. **Test 1:** `constructor should throw Too short password Error for a 11 character password`
@@ -32,4 +32,4 @@
 - Achieves 100% coverage
 
 ### My Custom Bug
-MyCustomBug requires a number to be at the end of the password, which all of the test passwords happen to have so the bug passes all of the tests.
+**MyCustomBug** requires a number to be at the end of the password, which all of the test passwords happen to have so the bug passes all of the tests.
